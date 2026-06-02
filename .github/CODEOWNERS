@@ -130,6 +130,7 @@
 
 ## Initialization
 /packages/wallet/src/initialization/instances/keyring-controller.ts @MetaMask/accounts-engineers @MetaMask/core-platform
+/packages/wallet/src/initialization/instances/remote-feature-flag-controller.ts @MetaMask/extension-platform @MetaMask/mobile-platform @MetaMask/core-platform
 
 ## Package Release related
 /packages/account-tree-controller/package.json  @MetaMask/accounts-engineers @MetaMask/core-platform
