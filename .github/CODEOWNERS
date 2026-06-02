@@ -129,6 +129,7 @@
 /packages/profile-metrics-controller            @MetaMask/mobile-platform @MetaMask/extension-platform
 
 ## Initialization
+/packages/wallet/src/initialization/instances/approval-controller/ @MetaMask/confirmations
 /packages/wallet/src/initialization/instances/keyring-controller.ts @MetaMask/accounts-engineers @MetaMask/core-platform
 /packages/wallet/src/initialization/instances/remote-feature-flag-controller.ts @MetaMask/extension-platform @MetaMask/mobile-platform @MetaMask/core-platform
 
