@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Wire `RemoteFeatureFlagController` into the default wallet initialization ([#8794](https://github.com/MetaMask/core/issues/8794))
+- Wire `RemoteFeatureFlagController` into the default wallet initialization ([#8969](https://github.com/MetaMask/core/pull/8969))
   - Adds a `remoteFeatureFlagController` slot to `instanceOptions` with `clientConfigApiService`, `getMetaMetricsId`, `clientVersion`, `prevClientVersion`, `fetchInterval`, and `disabled`. Each value differs per platform (extension, mobile, wallet-cli), so all are injectable with inert defaults; `prevClientVersion` lets consumers trigger feature-flag cache invalidation when the client version changes between sessions.
 
 ## [2.0.0]
