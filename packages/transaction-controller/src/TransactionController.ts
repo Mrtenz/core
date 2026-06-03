@@ -366,7 +366,9 @@ export type TransactionControllerOptions = {
   getPermittedAccounts?: (origin?: string) => Promise<string[]>;
 
   /** Gets the saved gas fee config. */
-  getSavedGasFees?: (chainId: Hex) => SavedGasFees | undefined;
+  getSavedGasFees?: (
+    transactionMeta: TransactionMeta,
+  ) => SavedGasFees | undefined;
 
   /**
    * Gets the transaction simulation configuration.
@@ -826,7 +828,9 @@ export class TransactionController extends BaseController<
 
   readonly #getPermittedAccounts?: (origin?: string) => Promise<string[]>;
 
-  readonly #getSavedGasFees: (chainId: Hex) => SavedGasFees | undefined;
+  readonly #getSavedGasFees: (
+    transactionMeta: TransactionMeta,
+  ) => SavedGasFees | undefined;
 
   readonly #getSimulationConfig: GetSimulationConfig;
 
@@ -963,7 +967,8 @@ export class TransactionController extends BaseController<
     this.#getNetworkState = getNetworkState;
     this.#getPermittedAccounts = getPermittedAccounts;
     this.#getSavedGasFees =
-      getSavedGasFees ?? ((_chainId): SavedGasFees | undefined => undefined);
+      getSavedGasFees ??
+      ((_transactionMeta): SavedGasFees | undefined => undefined);
     this.#getSimulationConfig =
       getSimulationConfig ??
       ((): ReturnType<GetSimulationConfig> => Promise.resolve({}));
