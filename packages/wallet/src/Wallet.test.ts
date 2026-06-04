@@ -14,6 +14,9 @@ const TEST_PASSWORD = 'testpass';
 async function setupWallet(): Promise<Wallet> {
   const wallet = new Wallet({
     instanceOptions: {
+      networkController: {
+        infuraProjectId: 'fake-infura-project-id',
+      },
       storageService: {
         storage: new InMemoryStorageAdapter(),
       },
@@ -70,6 +73,9 @@ describe('Wallet', () => {
         keyringController: {
           encryptor: new MockEncryptor(),
         },
+        networkController: {
+          infuraProjectId: 'fake-infura-project-id',
+        },
         storageService: {
           storage: new InMemoryStorageAdapter(),
         },
@@ -112,6 +118,9 @@ describe('Wallet', () => {
         },
       ],
       instanceOptions: {
+        networkController: {
+          infuraProjectId: 'fake-infura-project-id',
+        },
         storageService: {
           storage: new InMemoryStorageAdapter(),
         },
@@ -212,6 +221,9 @@ describe('Wallet', () => {
           },
         },
         instanceOptions: {
+          networkController: {
+            infuraProjectId: 'fake-infura-project-id',
+          },
           storageService: {
             storage: new InMemoryStorageAdapter(),
           },
