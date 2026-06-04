@@ -30,13 +30,14 @@ import {
   ETH_USDT_ADDRESS,
 } from './constants/bridge';
 import { ChainId, RequestStatus } from './types';
-import type { BridgeControllerMessenger, QuoteResponse, TxData } from './types';
+import type { BridgeControllerMessenger, QuoteResponse } from './types';
 import * as balanceUtils from './utils/balance';
 import { formatChainIdToDec } from './utils/caip-formatters';
 import * as featureFlagUtils from './utils/feature-flags';
 import * as fetchUtils from './utils/fetch';
 import { QuoteStreamCompleteReason } from './validators/quote-stream-complete';
 import { TokenFeatureType } from './validators/token-feature';
+import type { TxData } from './validators/trade';
 
 type RootMessenger = Messenger<
   MockAnyNamespace,
