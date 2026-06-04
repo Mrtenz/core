@@ -5,6 +5,8 @@ import mockBridgeQuotesErc20Erc20 from '../../tests/mock-quotes-erc20-erc20.json
 import mockBridgeQuotesNativeErc20 from '../../tests/mock-quotes-native-erc20.json';
 import { BridgeClientId, BRIDGE_PROD_API_BASE_URL } from '../constants/bridge';
 import { QuoteResponse } from '../types';
+import { BatchSellTransactionType } from '../validators/batch-sell';
+import { FeatureId } from '../validators/feature-flags';
 import {
   fetchBridgeQuotes,
   fetchBridgeTokens,
@@ -12,7 +14,6 @@ import {
   fetchBatchSellTrades,
   formatBatchSellTradesRequest,
 } from './fetch';
-import { BatchSellTransactionType, FeatureId } from './validators';
 
 const mockFetchFn = jest.fn();
 
@@ -914,15 +915,15 @@ describe('fetch', () => {
       ).toMatchInlineSnapshot(`
         [
           {
-            "reason": "Invalid batch simulation response. StructError: At path: transactions.0.maxFeePerGas -- Expected a value of type \`HexString\`, but received: \`1000\`",
+            "reason": "Invalid batch simulation response. StructError: At path: transactions.0.maxFeePerGas -- Expected a string, but received: 1000",
             "status": "rejected",
           },
           {
-            "reason": "Invalid batch simulation response. StructError: At path: transactions.0.maxFeePerGas -- Expected a value of type \`HexString\`, but received: \`"1000"\`",
+            "reason": "Invalid batch simulation response. StructError: At path: transactions.0.maxFeePerGas -- Expected a string matching \`/^0x[0-9a-f]+$/\` but received "1000"",
             "status": "rejected",
           },
           {
-            "reason": "Invalid batch simulation response. StructError: At path: transactions.0.maxFeePerGas -- Expected a value of type \`HexString\`, but received: \`291\`",
+            "reason": "Invalid batch simulation response. StructError: At path: transactions.0.maxFeePerGas -- Expected a string, but received: 291",
             "status": "rejected",
           },
         ]

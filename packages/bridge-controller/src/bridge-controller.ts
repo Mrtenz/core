@@ -88,7 +88,7 @@ import {
 } from './utils/quote';
 import { appendFeesToQuotes } from './utils/quote-fees';
 import { getMinimumBalanceForRentExemptionInLamports } from './utils/snaps';
-import type { FeatureId } from './utils/validators';
+import type { FeatureId } from './validators/feature-flags';
 
 const metadata: StateMetadata<BridgeControllerState> = {
   quoteRequest: {

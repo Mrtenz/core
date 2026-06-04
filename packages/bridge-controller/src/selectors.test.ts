@@ -28,7 +28,7 @@ import {
   formatAddressToAssetId,
   formatChainIdToHex,
 } from './utils/caip-formatters';
-import { BatchSellTransactionType } from './utils/validators';
+import { BatchSellTransactionType } from './validators/batch-sell';
 
 const MOCK_USDC_ADDRESS = '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48';
 const MOCK_MUSD_ADDRESS = '0x12345A7890123456789012345678901234567890';

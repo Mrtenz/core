@@ -30,28 +30,30 @@ import type {
 import type { BridgeController } from './bridge-controller';
 import type { BridgeControllerMethodActions } from './bridge-controller-method-action-types';
 import type { BRIDGE_CONTROLLER_NAME } from './constants/bridge';
+import type { SimulatedGasFeeLimitsSchema } from './validators/batch-sell';
+import type { BatchSellTradesResponseSchema } from './validators/batch-sell';
+import type { BridgeAssetSchema } from './validators/bridge-asset';
+import type { FeatureId } from './validators/feature-flags';
 import type {
-  BitcoinTradeDataSchema,
-  BridgeAssetSchema,
   ChainConfigurationSchema,
   ChainRankingSchema,
-  FeatureId,
+  PlatformConfigSchema,
+} from './validators/feature-flags';
+import type {
+  BitcoinTradeDataSchema,
   FeeDataSchema,
   IntentSchema,
-  PlatformConfigSchema,
   ProtocolSchema,
   QuoteResponseSchema,
   QuoteSchema,
   StepSchema,
-  TokenFeatureSchema,
-  QuoteStreamCompleteSchema,
   TronTradeDataSchema,
   TxDataSchema,
-  BatchSellTradesResponseSchema,
   GaslessPropertiesSchema,
-  SimulatedGasFeeLimitsSchema,
   TxFeeGasLimitsSchema,
-} from './utils/validators';
+} from './validators/quote-response';
+import type { QuoteStreamCompleteSchema } from './validators/quote-stream-complete';
+import type { TokenFeatureSchema } from './validators/token-feature';
 
 export type FetchFunction = (
   input: RequestInfo | URL | string,

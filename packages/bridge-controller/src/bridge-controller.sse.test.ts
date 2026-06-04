@@ -35,10 +35,8 @@ import * as balanceUtils from './utils/balance';
 import { formatChainIdToDec } from './utils/caip-formatters';
 import * as featureFlagUtils from './utils/feature-flags';
 import * as fetchUtils from './utils/fetch';
-import {
-  TokenFeatureType,
-  QuoteStreamCompleteReason,
-} from './utils/validators';
+import { QuoteStreamCompleteReason } from './validators/quote-stream-complete';
+import { TokenFeatureType } from './validators/token-feature';
 
 type RootMessenger = Messenger<
   MockAnyNamespace,

@@ -17,8 +17,8 @@ import type {
   NonEvmFees,
   TxData,
 } from '../types';
+import { FeatureId } from '../validators/feature-flags';
 import { isNativeAddress, isNonEvmChainId } from './bridge';
-import { FeatureId } from './validators';
 
 export const isValidQuoteRequest = (
   partialRequest: Partial<GenericQuoteRequest>,
@@ -152,9 +152,7 @@ export const calcSentAmount = (
   const sentAmount = intent
     ? new BigNumber(srcTokenAmount)
     : Object.values(feeData)
-        .filter(
-          (fee) => fee && fee.amount && fee.asset?.assetId === srcAsset.assetId,
-        )
+        .filter((fee) => fee?.amount && fee.asset?.assetId === srcAsset.assetId)
         .reduce(
           (acc, { amount }) => acc.plus(amount),
           new BigNumber(srcTokenAmount),

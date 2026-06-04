@@ -51,7 +51,7 @@ import {
   MetricsSwapType,
   UnifiedSwapBridgeEventName,
 } from './utils/metrics/constants';
-import { FeatureId } from './utils/validators';
+import { FeatureId } from './validators/feature-flags';
 
 const EMPTY_INIT_STATE = DEFAULT_BRIDGE_CONTROLLER_STATE;
 

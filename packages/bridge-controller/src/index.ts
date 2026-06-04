@@ -89,16 +89,15 @@ export {
   type BridgeControllerStateChangeEvent,
 } from './types';
 
+export { FeeType, ActionTypes } from './validators/quote-response';
 export {
-  FeeType,
-  ActionTypes,
-  BridgeAssetSchema,
-  FeatureId,
-  TokenFeatureType,
   validateQuoteStreamComplete,
   QuoteStreamCompleteReason,
-  BatchSellTransactionType,
-} from './utils/validators';
+} from './validators/quote-stream-complete';
+export { BatchSellTransactionType } from './validators/batch-sell';
+export { TokenFeatureType } from './validators/token-feature';
+export { BridgeAssetSchema } from './validators/bridge-asset';
+export { FeatureId } from './validators/feature-flags';
 
 export {
   ALLOWED_BRIDGE_CHAIN_IDS,
