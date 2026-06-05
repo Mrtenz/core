@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Bump `@metamask/network-enablement-controller` from `^5.2.0` to `^5.3.0` ([#9003](https://github.com/MetaMask/core/pull/9003))
 
+### Removed
+
+- **BREAKING:** Remove `TransactionController:incomingTransactionsReceived` from `AssetsController` allowed events and `RpcDataSourceAllowedEvents`; remove associated balance refresh on incoming transactions ([#9012](https://github.com/MetaMask/core/pull/9012))
+
 ## [8.3.2]
 
 ### Changed
