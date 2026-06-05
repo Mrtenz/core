@@ -323,7 +323,8 @@ const setupController = async (
   };
 
   const transactionController = new TransactionController(options);
-  transactionController.initialize();
+
+  await jestAdvanceTime({ duration: 10 });
 
   return {
     transactionController,
