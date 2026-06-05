@@ -7,11 +7,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Added
-
-- **BREAKING:** Add public `initialize()` method to `TransactionController`; must be called by the consumer after all dependent controllers are registered on the messenger ([#9012](https://github.com/MetaMask/core/pull/9012))
-  - `MultichainTrackingHelper` no longer initializes synchronously in its constructor; initialization is deferred until `TransactionController.initialize()` is called, so the controller can be constructed before `NetworkController` is available.
-
 ### Removed
 
 - **BREAKING:** Remove incoming transaction support from `TransactionController` ([#9012](https://github.com/MetaMask/core/pull/9012))
@@ -21,7 +16,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Removed event `TransactionController:incomingTransactionsReceived`.
   - Removed exported constant `INCOMING_TRANSACTIONS_SUPPORTED_CHAIN_IDS`.
   - Removed exported types `TransactionControllerIncomingTransactionsReceivedEvent`, `TransactionControllerStartIncomingTransactionPollingAction`, `TransactionControllerStopIncomingTransactionPollingAction`, `TransactionControllerUpdateIncomingTransactionsAction`.
+  - Removed unused exports `getAccountTransactions`, `TransactionResponse`, `GetAccountTransactionsRequest`, `GetAccountTransactionsResponse` from the accounts API module.
   - Fields on `TransactionMeta` related to incoming transactions are preserved.
+- **BREAKING:** `MultichainTrackingHelper` no longer initializes synchronously in its constructor ([#9012](https://github.com/MetaMask/core/pull/9012))
+  - Initialization is now deferred: the helper polls until `NetworkController` is available on the messenger, allowing `TransactionController` to be constructed before `NetworkController` is registered.
 
 ### Changed
 
