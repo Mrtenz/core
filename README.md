@@ -572,6 +572,7 @@ linkStyle default opacity:0.5
   wallet --> controller_utils;
   wallet --> keyring_controller;
   wallet --> messenger;
+  wallet --> network_controller;
   wallet --> storage_service;
 ```
 
