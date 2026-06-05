@@ -7,22 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Removed
-
-- **BREAKING:** Remove incoming transaction support from `TransactionController` ([#9012](https://github.com/MetaMask/core/pull/9012))
-  - Deleted `IncomingTransactionHelper` and `AccountsApiRemoteTransactionSource`.
-  - Removed constructor option `incomingTransactions`.
-  - Removed public methods `startIncomingTransactionPolling`, `stopIncomingTransactionPolling`, `updateIncomingTransactions`.
-  - Removed event `TransactionController:incomingTransactionsReceived`.
-  - Removed exported constant `INCOMING_TRANSACTIONS_SUPPORTED_CHAIN_IDS`.
-  - Removed exported types `TransactionControllerIncomingTransactionsReceivedEvent`, `TransactionControllerStartIncomingTransactionPollingAction`, `TransactionControllerStopIncomingTransactionPollingAction`, `TransactionControllerUpdateIncomingTransactionsAction`.
-  - Removed unused exports `getAccountTransactions`, `TransactionResponse`, `GetAccountTransactionsRequest`, `GetAccountTransactionsResponse` from the accounts API module.
-  - Fields on `TransactionMeta` related to incoming transactions are preserved.
-- **BREAKING:** `MultichainTrackingHelper` no longer initializes synchronously in its constructor ([#9012](https://github.com/MetaMask/core/pull/9012))
-  - Initialization is now deferred: the helper polls until `NetworkController` is available on the messenger, allowing `TransactionController` to be constructed before `NetworkController` is registered.
-
 ### Changed
 
+- `TransactionController` can now be constructed before `NetworkController` is registered on the messenger ([#9012](https://github.com/MetaMask/core/pull/9012))
+  - Network client tracking initializes automatically once `NetworkController` becomes available; no explicit call required from the consumer.
+  - Transaction history trimming is skipped when the history limit feature flag is unavailable.
 - **BREAKING:** Remove deprecated `TransactionController` constructor options and unused hooks, and replace them with direct messenger calls ([#8983](https://github.com/MetaMask/core/pull/8983))
   - Removed options: `disableHistory`, `disableSendFlowHistory`, `getCurrentAccountEIP1559Compatibility`, `getCurrentNetworkEIP1559Compatibility`, `getExternalPendingTransactions`, `getGasFeeEstimates`, `getNetworkClientRegistry`, `getNetworkState`, `pendingTransactions`, `securityProviderRequest`, `sign`, `transactionHistoryLimit`
   - Removed hooks: `afterSign`, `afterSimulate`, `getAdditionalSignArguments`
@@ -30,6 +19,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Removed types: `AfterSimulateHook`, `PendingTransactionOptions`, `SecurityProviderRequest`; `AfterAddHook` parameter `skipSimulation` removed
   - Added required `AllowedActions`: `GasFeeController:fetchGasFeeEstimates`, `KeyringController:signTransaction`, `NetworkController:getEIP1559Compatibility`, `NetworkController:getNetworkClientRegistry`, `NetworkController:getState`
   - Removed resubmit logic from `PendingTransactionTracker`
+
+### Removed
+
+- **BREAKING:** Remove incoming transaction support from `TransactionController` ([#9012](https://github.com/MetaMask/core/pull/9012))
+  - Removed constructor option `incomingTransactions`.
+  - Removed public methods `startIncomingTransactionPolling`, `stopIncomingTransactionPolling`, `updateIncomingTransactions`.
+  - Removed event `TransactionController:incomingTransactionsReceived`.
+  - Removed exported constant `INCOMING_TRANSACTIONS_SUPPORTED_CHAIN_IDS`.
+  - Removed exported types `TransactionControllerIncomingTransactionsReceivedEvent`, `TransactionControllerStartIncomingTransactionPollingAction`, `TransactionControllerStopIncomingTransactionPollingAction`, `TransactionControllerUpdateIncomingTransactionsAction`, `TransactionResponse`, `GetAccountTransactionsRequest`, `GetAccountTransactionsResponse`.
+  - Fields on `TransactionMeta` related to incoming transactions are preserved.
 
 ## [66.0.1]
 
