@@ -92,6 +92,6 @@ jobs:
         with:
           is-high-risk-environment: true
           ref: ${{ github.sha }}
-      - uses: MetaMask/action-publish-release@v3
+      - uses: MetaMask/action-publish-release@de6dad4e63bb6dd592b85d526cb230ad13a7948a
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
