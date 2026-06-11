@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [7.1.3]
+
 ### Changed
 
 - Bump `@metamask/controller-utils` from `^12.0.0` to `^12.2.0` ([#8774](https://github.com/MetaMask/core/pull/8774), [#9058](https://github.com/MetaMask/core/pull/9058), [#9083](https://github.com/MetaMask/core/pull/9083))
@@ -294,7 +296,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
     All changes listed after this point were applied to this package following the monorepo conversion.
 
-[Unreleased]: https://github.com/MetaMask/core/compare/@metamask/address-book-controller@7.1.2...HEAD
+[Unreleased]: https://github.com/MetaMask/core/compare/@metamask/address-book-controller@7.1.3...HEAD
+[7.1.3]: https://github.com/MetaMask/core/compare/@metamask/address-book-controller@7.1.2...@metamask/address-book-controller@7.1.3
 [7.1.2]: https://github.com/MetaMask/core/compare/@metamask/address-book-controller@7.1.1...@metamask/address-book-controller@7.1.2
 [7.1.1]: https://github.com/MetaMask/core/compare/@metamask/address-book-controller@7.1.0...@metamask/address-book-controller@7.1.1
 [7.1.0]: https://github.com/MetaMask/core/compare/@metamask/address-book-controller@7.0.1...@metamask/address-book-controller@7.1.0

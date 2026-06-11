@@ -7,12 +7,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Uncategorized
-
-- Release/1030.0.0 ([#9077](https://github.com/MetaMask/core/pull/9077))
-- Release/1025.0.0 ([#9043](https://github.com/MetaMask/core/pull/9043))
-- Revert "Release 1022.0.0" ([#9025](https://github.com/MetaMask/core/pull/9025))
-
 ### Changed
 
 - Bump `@metamask/assets-controller` from `^9.0.0` to `^9.0.1` ([#9083](https://github.com/MetaMask/core/pull/9083))

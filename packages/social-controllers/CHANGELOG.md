@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [3.0.0]
+
 ### Changed
 
 - Bump `@metamask/controller-utils` from `^12.0.0` to `^12.2.0` ([#8774](https://github.com/MetaMask/core/pull/8774), [#9058](https://github.com/MetaMask/core/pull/9058), [#9083](https://github.com/MetaMask/core/pull/9083))
@@ -86,7 +88,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - `unfollowTrader` — unfollows traders and removes addresses from state
     - `updateFollowing` — fetches following list and replaces addresses in state
 
-[Unreleased]: https://github.com/MetaMask/core/compare/@metamask/social-controllers@2.2.1...HEAD
+[Unreleased]: https://github.com/MetaMask/core/compare/@metamask/social-controllers@3.0.0...HEAD
+[3.0.0]: https://github.com/MetaMask/core/compare/@metamask/social-controllers@2.2.1...@metamask/social-controllers@3.0.0
 [2.2.1]: https://github.com/MetaMask/core/compare/@metamask/social-controllers@2.2.0...@metamask/social-controllers@2.2.1
 [2.2.0]: https://github.com/MetaMask/core/compare/@metamask/social-controllers@2.1.0...@metamask/social-controllers@2.2.0
 [2.1.0]: https://github.com/MetaMask/core/compare/@metamask/social-controllers@2.0.0...@metamask/social-controllers@2.1.0
