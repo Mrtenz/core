@@ -53,7 +53,7 @@ jobs:
         with:
           name: publish-release-artifacts-${{ github.sha }}
       - name: Dry run publish to NPM
-        uses: MetaMask/action-npm-publish@v6
+        uses: MetaMask/action-npm-publish@a41c4d3f50ed91dbd2db100382636071cbd00995
         with:
           dry-run: true
           slack-webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
@@ -79,7 +79,7 @@ jobs:
         with:
           name: publish-release-artifacts-${{ github.sha }}
       - name: Publish to NPM
-        uses: MetaMask/action-npm-publish@v6
+        uses: MetaMask/action-npm-publish@a41c4d3f50ed91dbd2db100382636071cbd00995
         with:
           dry-run: false
           npm-token: ${{ secrets.NPM_TOKEN }}
