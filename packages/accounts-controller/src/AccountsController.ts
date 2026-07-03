@@ -1,3 +1,4 @@
+// Test comment: package change.
 import { BaseController } from '@metamask/base-controller';
 import type {
   ControllerGetStateAction,
